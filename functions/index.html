@@ -49,9 +49,9 @@
                     <h2> 
                       Some verbs we've already met:
                     </h2>
-                    <pre class="fragment">>>> int() <span style="color:red;"># converts non-integers to integers</span></pre>
-                    <pre class="fragment">>>> str() <span style="color:red;"># converts non-strings to strings</span></pre>
-                    <pre class="fragment">>>> len() <span style="color:red;"># measures the length of a string, list, or dictionary</span></pre>
+                    <pre class="fragment"><span class="ipython-in">1</span>int() <span style="color:red;"># converts non-integers to integers</span></pre>
+                    <pre class="fragment"><span class="ipython-in">2</span>str() <span style="color:red;"># converts non-strings to strings</span></pre>
+                    <pre class="fragment"><span class="ipython-in">3</span>len() <span style="color:red;"># measures the length of a string, list, or dictionary</span></pre>
                     <p class="fragment">These are "built-in" functions, as they come with Python.</p>
                 </section>
 
@@ -86,45 +86,56 @@
                 </section>
                 <section>
                     <p>A function is a verb, so</p>
-                    <p class="fragment">"Computer, when I say, 'Measure and append this word,' what I mean is 
+                    <p class="fragment">"Computer, when I say, 'Give me the length of this word and transform it a bit,' what I mean is 
                         <ol>
+                            <li class="fragment">replace every 'a' or 'A' with an 'x',</li>
+                            <li class="fragment">use it in a sentence,</li>
                             <li class="fragment">assign the length of the word to another variable,</li>
-                            <li class="fragment">append the word to the end of a list,</li>
                             <li class="fragment">and tell me the word's length in plain language."</li>
                         </ol>
                     </p > 
                 </section>
 				<section>
-                    <pre><span style="color:red;"># word_measure.py</span></pre>
-                    <pre><span style="color:red;"># gives the length of a word and adds it to a list</span></pre>
-                    <pre class="fragment">the_word = "Python"<span style="color:red;"> # create the word </span></pre>
-                    <pre class="fragment">word_list = [] <span style="color:red;"># make sure there's a list to append to</span></pre>
+                    <pre><span style="color:red;"># word_stuff.py</span></pre>
+                    <pre class="fragment">a_word = "Australia"<span style="color:red;"> # create the word </span></pre>
+                    <pre class="fragment " style="color:red;"># replace every 'a' with an 'x'</pre>
+                    <pre class="fragment">print a_word.lower().replace('a','x')</pre>
+                    <pre class="fragment " style="color:red;"># use it in a sentence</pre>
+                    <pre class="fragment">print "The only thing we have to fear is " + a_word + " itself."</pre>
                     <pre class="fragment " style="color:red;"># assign the length of the word to another variable</pre>
-                    <pre class="fragment">word_length = len(the_word)</pre>
-                    <pre class="fragment " style="color:red;"># append the word to the end of a list</pre>
-                    <pre class="fragment">word_list.append(the_word)</pre>
+                    <pre class="fragment">word_length = len(a_word)</pre>
                     <pre class="fragment " style="color:red;"># and tell me the word's length in plain language</pre>
-                    <pre class="fragment">print "'" + the_word + "' is " + str(word_length) + " letters long."</pre>
+                    <pre class="fragment">print "'" + a_word + "' is " + str(word_length) + " letters long."</pre>
                     <pre> 
 </pre>
-                    <pre class="fragment">$ ipython word_measure.py</pre>
-                    <pre class="fragment">Enter a word for me to measure. <span class="fragment">Python</span></pre>
-                    <pre class="fragment">'Python' is six letters long.</pre>
+                    <pre class="fragment">$ ipython word_stuff.py</pre>
+                    <pre class="fragment">xustrxlix
+The only thing we have to fear is Australia itself.
+'Australia' is nine letters long.
+</pre>
                     <p class="fragment">Do you want to have to type/paste this code in every time you need it?</p>
 				</section>
                 <section data-background="http://i.giphy.com/XMl7bkguaL4PK.gif">
                 </section>
                 <section>
+                    <p>Would it be useful if you could perform this on <em>any</em> word?</p>
+                </section>
+                <section data-background="http://i.giphy.com/Pjr9bh5OUkgTe.gif">
+                
+                </section>
+                <section>
 
                     <p>What if this</p>
                     <pre>
-word_length = len(word_from_user)
-word_list.append(word_from_user)
-print word_from_user + " is " + str(word_length) + " letters long."
+a_word = "Australia"
+print a_word.lower().replace('a','x')
+print "The only thing we have to fear is " + a_word + " itself."
+word_length = len(a_word)
+print a_word + " is " + str(word_length) + " letters long."
                     </pre>
 					<p class="fragment">could become</p>
                     <pre class="fragment">
-measure_and_append_word()
+transform_and_measure_a_word("Australia")
                     </pre>
                     <p class="fragment">?</p>
 				</section>
@@ -134,15 +145,22 @@ measure_and_append_word()
 <section>
                     <pre class="fragment current-visible">def</pre>
                     <pre class="fragment current-visible">def <span style="color:red;"># says "I'm defining a function"</pre>
-                    <pre class="fragment current-visible">def measure_and_append_word(the_word) </pre>
-                    <pre class="fragment current-visible">def measure_and_append_word(the_word) <span style="color:red;"># the name of the function</pre>
-                    <pre class="fragment current-visible">def measure_and_append_word(the_word):</pre>
-                    <pre class="fragment current-visible">def measure_and_append_word(the_word):
-    word_length = len(word_from_user)
-    word_list.append(word_from_user)
-    print word_from_user + " is " + str(word_length) + " letters long."
-</code></pre>
+                    <pre class="fragment current-visible">def transform_and_measure_a_word(a_word)</pre>
+                    <pre class="fragment current-visible">def transform_and_measure_a_word(a_word)<span style="color:red;"> # the name of the function</pre>
+                    <pre class="fragment current-visible">def transform_and_measure_a_word(a_word):</pre>
+                    <pre class="fragment current-visible">def transform_and_measure_a_word(a_word):
+    print a_word.lower().replace('a','x')
+    print "The only thing we have to fear is " + a_word + " itself."
+    word_length = len(a_word)
+    print a_word + " is " + str(word_length) + " letters long."
+</pre>
 				</section>
+                <section>
+                    <p>Now you can call transform_and_measure_a_word() on any word!:</p>
+                    <pre class="fragment"><span class="ipython-in">1</span>transform_and_measure_a_word("Superman") </pre>
+                    <pre class="fragment">transform_and_measure_a_word("Superman") </pre>
+                    <pre class="fragment">transform_and_measure_a_word("Superman") </pre>
+                </section>
 
                 <section>
                 
