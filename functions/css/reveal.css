@@ -1193,10 +1193,9 @@ body {
 
 .ipython-out {
   color: red;
-  letter-spacing: -3px;
 }
 .ipython-out:before {
-  content: "Out [";
+  content: "Out[";
 }
 
 .ipython-out:after {
@@ -1204,5 +1203,5 @@ body {
 }
 
 .has-background p, .has-background pre {
-  background-color: rgba(10,10,10,.3);
+  background-color: rgba(10,10,10,.9);
 }

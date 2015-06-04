@@ -102,16 +102,6 @@
 
 
 
-                <section>
-                     <p>"Hey, len(), could you please measure this string for me?"</p>
-                     <pre style="left:30%;"><span class="ipython-in">4</span>len(this_string)
-10</pre>
-                    <p >"Thanks, len(), you're the best."</p>
-
-                </section>
-
-
-
 
 
 
@@ -269,12 +259,16 @@ transform_and_measure_a_word("Australia")
                 <section>
                 <p>Now you can call transform_and_measure_a_word() on any word!:</p>
                     <pre class="fragment">$ ipython -i word_stuff.py</pre>
+                    <pre>
+                    </pre>
                     <pre class="fragment current-visible"><span class="ipython-in">1</span></pre>
                     <pre class="fragment"><span class="ipython-in">1</span>transform_and_measure_a_word("Australia")</pre>
                     <pre class="fragment">xustrxlix
 The only thing we have to fear is Australia itself.
 'Australia' is nine letters long.
 </pre>
+                    <pre>
+                    </pre>
                     <pre class="fragment current-visible"><span class="ipython-in">2</span></pre>
                     <pre class="fragment "><span class="ipython-in">2</span>transform_and_measure_a_word("Superman") </pre>
                     <pre class="fragment">Supermxn
@@ -308,16 +302,122 @@ The only thing we have to fear is Lake Champlain itself.
 </pre>
 
                 </section>
+                <section>
+                
+                    <p>Let's try creating another function, one to calculate sales tax.</p>        
+                </section>
+
+
+
+
 
                 <section>
-                    <p>Let's try creating another function, one to calculate sales tax.</p>        
-                    <pre class="fragment" style="color:red;"># The tax rate in Burlington is 7%</pre>
-                    <pre class="fragment current-visible">def calculate_sales_tax():</pre>
+                    <pre  style="color:red;"># sales_tax.py</pre>
+                    <pre class="fragment current-visible">def calculate_sales_tax(???):</pre>
                     <pre class="fragment current-visible">def calculate_sales_tax(price):</pre>
+                    <pre class="fragment current-visible">def calculate_sales_tax(price, ???):</pre>
                     <pre class="fragment">def calculate_sales_tax(price, tax_rate):</pre>
                     <pre class="fragment">    total_tax = price * tax_rate</pre>
                     <pre class="fragment">    return total_tax</pre>
+                    <pre>
+                    </pre>
+                    <pre class="fragment">$ ipython</pre>
+                    <pre>
+                    </pre>
+                    <pre class="fragment current-visible"><span class="ipython-in">1</span></pre>
+                    <pre class="fragment"><span class="ipython-in">1</span>execfile('sales_tax.py')</pre>
+                    <pre>
+                    </pre>
+                    <pre class="fragment current-visible"><span class="ipython-in">2</span>calculate_sales_tax(???)</pre>
+                    <pre class="fragment current-visible"><span class="ipython-in">2</span>calculate_sales_tax(500)</pre>
+                    <pre class="fragment current-visible"><span class="ipython-in">2</span>calculate_sales_tax(500, ???)</pre>
+                    <pre class="fragment "><span class="ipython-in">2</span>calculate_sales_tax(500, .07)</pre>
+                    <pre class="fragment"><span class="ipython-out">2</span>35.0</pre>
                 </section>
+
+
+
+
+
+
+                <section>
+                    <p>What is "return"?</p>
+                    <p class="fragment">If the argument(s) are the <em>input</em> to a function,</p>
+                    <p class="fragment">the "return" statement is the <em>output</em>.</p>
+</section>
+
+
+
+<section>
+                    <p class="fragment">This allows us to convenient things like</p>
+                    <pre>
+                    </pre>
+                    <pre class="fragment"><span class="ipython-in">3</span>x = calculate_sales_tax(500,.07)</pre>
+                    <pre>
+                    </pre>
+                    <pre class="fragment"><span class="ipython-in">4</span>print "$" + str(x)</pre>
+                    <pre class="fragment">$35.0</pre>
+
+
+                </section>
+
+
+
+
+
+                <section>
+                    <h1>Review</h1>                
+                </section>
+
+
+
+
+
+
+                <section>
+                    <p>A function is a <em>verb</em>.</p>
+</section>
+<section>
+                    <p>To <em>call</em> a function,</p> 
+                    <pre class="fragment"><span class="ipython-in">1</span>a_function(an_argument, another_argument)</pre>
+</section>
+<section>
+                    <p >To <em>create</em> a function,</p>
+                    <pre class="fragment">def a_function(an_argument, another_argument):
+    <span style="color:red;"># do some things with code</span>
+    a_sum = an_argument + another_argument 
+    <span style="color:red;"># optionally, use a return statement to output something</span>
+    return a_sum
+</pre>
+                </section>
+
+
+
+
+
+
+                <section>
+                    <h2>Module #2: Return a quiz question.</h2>
+</section>
+<section>
+                    <p style="font-size: 30px;">Write a function that 1) takes an integer as an argument and 2) returns the question at that integer's index from the question list we created earlier.</p>  
+                    <pre>
+                    </pre>
+                    <pre class="fragment" style="color:yellow">third_item_in_list = a_list[2]</pre>
+                    <pre>
+                    </pre>
+                    <pre class="fragment" style="color:yellow">call_a_function(argument, another_arg) </pre>
+                    <pre>
+                    </pre>
+                    <pre class="fragment" style="color:yellow">def make_a_function(arg, other_arg):
+    return arg * other_arg</pre>
+                </section>
+
+
+
+
+
+
 			</div>
 
 		</div>
