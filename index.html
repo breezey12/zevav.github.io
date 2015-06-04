@@ -49,9 +49,9 @@
                     <h2> 
                       Some verbs we've already met:
                     </h2>
-                    <pre class="fragment">>>> int() # converts non-integers to integers</pre>
-                    <pre class="fragment">>>> str() # converts non-strings to strings</pre>
-                    <pre class="fragment">>>> len() # measures the length of a string, list, or dictionary</pre>
+                    <pre class="fragment">>>> int() <span style="color:red;"># converts non-integers to integers</span></pre>
+                    <pre class="fragment">>>> str() <span style="color:red;"># converts non-strings to strings</span></pre>
+                    <pre class="fragment">>>> len() <span style="color:red;"># measures the length of a string, list, or dictionary</span></pre>
                     <p class="fragment">These are "built-in" functions, as they come with Python.</p>
                 </section>
 
@@ -67,8 +67,8 @@
                 </section>
                 <section>
                     <p>"Hey, len(), could you please measure this string for me?"</p>
-                    <pre class="fragment"><code data_trim contenteditable>>>> len(this_string)
-10</code></pre>
+                    <pre class="fragment" style="left:30%;">>>> len(this_string)
+10</pre>
                     <p class="fragment">"Thanks, len(), you're the best."</p>
                 </section>
                 <section>
@@ -80,45 +80,51 @@
                     <p>The fun part:</p>
                     <p>You can make (<em>define</em>) your own functions!</p> 
                 </section>
-
                 <section>
-					<h2>Block of organized code.</h2>
-                    <pre class="fragment current-visible"><code data_trim contenteditable>
-# gives the length of a word and adds it to a list
-word_list = []
-word_from_user = raw_input("Enter a word for me to measure")
-word_length = len(word_from_user)
-word_list.append(word_from_user)
-print word_from_user + " is " + str(word_length) + " letters long."
-                    </code></pre>
-                </section>
-
-                <section>
-					<h2>Reusable</h2>
+                    <p>Why would you want to define your own function?</p>
+                    <blockquote class="fragment">"Function: A block of organized, <span class="fragment highlight-red">reusable</span> code that is used to perform a single, related action."</blockquote>
                 </section>
 
 				<section>
-                    <p>this</p>
-                    <pre><code data-trim contenteditable> 
+                    <p>For example,</p>
+                    <pre class="fragment "><span style="color:red;"># gives the length of a word and adds it to a list</span>
+word_list = []
+word_from_user = raw_input("Enter a word for me to measure. ")
+word_length = len(word_from_user)
+word_list.append(word_from_user)
+print word_from_user + " is " + str(word_length) + " letters long."</pre>
+                    <pre class="fragment current-visible">
+
+Enter a word for me to measure. Python
+Python is six letters long.</pre>
+                    <p class="fragment">Do you want to have to type/paste this in every time you need it?</p>
+				</section>
+
+                <section>
+
+                    <p>What if this</p>
+                    <pre>
 word_list = []
 word_from_user = raw_input("Enter a word for me to measure")
 word_length = len(word_from_user)
 word_list.append(word_from_user)
 print word_from_user + " is " + str(word_length) + " letters long."
-                    </code></pre>
-					<p class="fragment">becomes</p>
-                    <pre class="fragment"><code data-trim contenteditable> 
+                    </pre>
+					<p class="fragment">could become</p>
+                    <pre class="fragment">
 word_list = []
 measure_and_append_word()
-                    </code></pre>
+                    </pre>
+                    <p class="fragment">?</p>
 				</section>
 				<section>
 					<h2>Anatomy of a Function</h2>
-                    <pre class="fragment current-visible"><code  data-trim contenteditable>def</code></pre>
-                    <pre class="fragment current-visible"><code  data-trim contenteditable>def # says "I'm defining a function"</code></pre>
-                    <pre class="fragment current-visible"><code  data-trim contenteditable>def measure_and_append_word() # the name of the function + "()"</code></pre>
-                    <pre class="fragment current-visible"><code  data-trim contenteditable>def measure_and_append_word():</code></pre>
-                    <pre class="fragment current-visible"><code  data-trim contenteditable>def measure_and_append_word():
+                    <pre class="fragment current-visible">def</pre>
+                    <pre class="fragment current-visible">def <span style="color:red;"># says "I'm defining a function"</pre>
+                    <pre class="fragment current-visible">def measure_and_append_word() </pre>
+                    <pre class="fragment current-visible">def measure_and_append_word() <span style="color:red;"># the name of the function</pre>
+                    <pre class="fragment current-visible">def measure_and_append_word():</pre>
+                    <pre class="fragment current-visible">def measure_and_append_word():
     word_from_user = raw_input("Enter a word for me to measure")
     word_length = len(word_from_user)
     word_list.append(word_from_user)
@@ -126,10 +132,18 @@ measure_and_append_word()
 </code></pre>
 				</section>
 
-				<section>
-                    <blockquote>"A block of organized, reusable code that is used to perform a single, related action."</blockquote>
-				</section>
-
+                <section>
+                
+                    <p >By the way, functions don't have to have parameters.</p>                    
+                    <p class="fragment">In this case, we've created an "anonymous" function (no parameter).</p>
+                </section>
+                <section>
+                    <pre >>>> word_list = []</pre>
+                    <pre class="fragment">>>> measure_and_append_word()</pre>
+                    <pre class="fragment">
+Enter a word for me to measure. Python
+Python is six letters long.</pre>
+                </section>
 			</div>
 
 		</div>
