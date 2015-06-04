@@ -65,14 +65,14 @@
                     <p>When you "run" a function,</p>
                     <p class="fragment">you <em>call</em> it.</p>
                 </section>
-                <section>
+                <section class="has-background" data-background="http://i.giphy.com/yPhqlJccIOaru.gif">
                     <p>"Hey, len(), could you please measure this string for me?"</p>
                     <pre class="fragment" style="left:30%;">>>> len(this_string)
 10</pre>
                     <p class="fragment">"Thanks, len(), you're the best."</p>
                 </section>
                 <section>
-                    <p>The bit in the parentheses is the "parameter".</p> 
+                    <p>The bit in the parentheses is the "argument".</p> 
                     <pre style="text-align:center;">>>> len(<span class="fragment highlight-red">this_string</span>)</pre>
                 </section>
 
@@ -84,48 +84,60 @@
                     <p>Why would you want to define your own function?</p>
                     <blockquote class="fragment">"Function: A block of organized, <span class="fragment highlight-red">reusable</span> code that is used to perform a single, related action."</blockquote>
                 </section>
-
+                <section>
+                    <p>A function is a verb, so</p>
+                    <p class="fragment">"Computer, when I say, 'Measure and append this word,' what I mean is 
+                        <ol>
+                            <li class="fragment">assign the length of the word to another variable,</li>
+                            <li class="fragment">append the word to the end of a list,</li>
+                            <li class="fragment">and tell me the word's length in plain language."</li>
+                        </ol>
+                    </p > 
+                </section>
 				<section>
-                    <p>For example,</p>
-                    <pre class="fragment "><span style="color:red;"># gives the length of a word and adds it to a list</span>
-word_list = []
-word_from_user = raw_input("Enter a word for me to measure. ")
-word_length = len(word_from_user)
-word_list.append(word_from_user)
-print word_from_user + " is " + str(word_length) + " letters long."</pre>
-                    <pre class="fragment current-visible">
-
-Enter a word for me to measure. Python
-Python is six letters long.</pre>
-                    <p class="fragment">Do you want to have to type/paste this in every time you need it?</p>
+                    <pre><span style="color:red;"># word_measure.py</span></pre>
+                    <pre><span style="color:red;"># gives the length of a word and adds it to a list</span></pre>
+                    <pre class="fragment">the_word = "Python"<span style="color:red;"> # create the word </span></pre>
+                    <pre class="fragment">word_list = [] <span style="color:red;"># make sure there's a list to append to</span></pre>
+                    <pre class="fragment " style="color:red;"># assign the length of the word to another variable</pre>
+                    <pre class="fragment">word_length = len(the_word)</pre>
+                    <pre class="fragment " style="color:red;"># append the word to the end of a list</pre>
+                    <pre class="fragment">word_list.append(the_word)</pre>
+                    <pre class="fragment " style="color:red;"># and tell me the word's length in plain language</pre>
+                    <pre class="fragment">print "'" + the_word + "' is " + str(word_length) + " letters long."</pre>
+                    <pre> 
+</pre>
+                    <pre class="fragment">$ ipython word_measure.py</pre>
+                    <pre class="fragment">Enter a word for me to measure. <span class="fragment">Python</span></pre>
+                    <pre class="fragment">'Python' is six letters long.</pre>
+                    <p class="fragment">Do you want to have to type/paste this code in every time you need it?</p>
 				</section>
-
+                <section data-background="http://i.giphy.com/XMl7bkguaL4PK.gif">
+                </section>
                 <section>
 
                     <p>What if this</p>
                     <pre>
-word_list = []
-word_from_user = raw_input("Enter a word for me to measure")
 word_length = len(word_from_user)
 word_list.append(word_from_user)
 print word_from_user + " is " + str(word_length) + " letters long."
                     </pre>
 					<p class="fragment">could become</p>
                     <pre class="fragment">
-word_list = []
 measure_and_append_word()
                     </pre>
                     <p class="fragment">?</p>
 				</section>
-				<section>
-					<h2>Anatomy of a Function</h2>
+				<section data-background="http://i.giphy.com/10XT6xMLS4eofK.gif">
+					<h1 style="color:red; ">Anatomy of a Function</h1>
+</section>
+<section>
                     <pre class="fragment current-visible">def</pre>
                     <pre class="fragment current-visible">def <span style="color:red;"># says "I'm defining a function"</pre>
-                    <pre class="fragment current-visible">def measure_and_append_word() </pre>
-                    <pre class="fragment current-visible">def measure_and_append_word() <span style="color:red;"># the name of the function</pre>
-                    <pre class="fragment current-visible">def measure_and_append_word():</pre>
-                    <pre class="fragment current-visible">def measure_and_append_word():
-    word_from_user = raw_input("Enter a word for me to measure")
+                    <pre class="fragment current-visible">def measure_and_append_word(the_word) </pre>
+                    <pre class="fragment current-visible">def measure_and_append_word(the_word) <span style="color:red;"># the name of the function</pre>
+                    <pre class="fragment current-visible">def measure_and_append_word(the_word):</pre>
+                    <pre class="fragment current-visible">def measure_and_append_word(the_word):
     word_length = len(word_from_user)
     word_list.append(word_from_user)
     print word_from_user + " is " + str(word_length) + " letters long."
@@ -134,8 +146,8 @@ measure_and_append_word()
 
                 <section>
                 
-                    <p >By the way, functions don't have to have parameters.</p>                    
-                    <p class="fragment">In this case, we've created an "anonymous" function (no parameter).</p>
+                    <p >By the way, functions don't have to have arguments.</p>                    
+                    <p class="fragment">In this case, we've created an "anonymous" function (no argument).</p>
                     <h2 class="fragment">()</h2>
                 </section>
                 <section>

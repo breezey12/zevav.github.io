@@ -1177,3 +1177,32 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+.ipython-in {
+  color: rgb(53,118,200);
+  vertical-align: -15%;
+}
+
+.ipython-in:before {
+  content: "In [";
+}
+
+.ipython-in:after {
+  content: "]: ";
+}
+
+.ipython-out {
+  color: red;
+  letter-spacing: -3px;
+}
+.ipython-out:before {
+  content: "Out [";
+}
+
+.ipython-out:after {
+  content: "]: ";
+}
+
+.has-background p, .has-background pre {
+  background-color: rgba(10,10,10,.3);
+}
