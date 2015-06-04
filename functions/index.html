@@ -40,10 +40,20 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
+
+
+
+
 				<section>
 					<h1>Functions</h1>
 					<h3 class="fragment">Programming-speak for "verbs"<h3>
 				</section>
+
+
+
+
+
 
                 <section> 
                     <h2> 
@@ -55,38 +65,93 @@
                     <p class="fragment">These are "built-in" functions, as they come with Python.</p>
                 </section>
 
+
+
+
+
+
                 <section>
                     
                     <p >Functions<em> do</em> things;</p>
                     <p class="fragment">Variables (integers, strings, lists) <em>are </em>things.</p>
                 </section>
 
+
+
+
+
+
                 <section>
                     <p>When you "run" a function,</p>
                     <p class="fragment">you <em>call</em> it.</p>
                 </section>
+
+
+
+
+
                 <section class="has-background" data-background="http://i.giphy.com/yPhqlJccIOaru.gif">
                     <p>"Hey, len(), could you please measure this string for me?"</p>
-                    <pre class="fragment" style="left:30%;">>>> len(this_string)
+                    <pre class="fragment" style="left:30%;"><span class="ipython-in">4</span>len(this_string)
 10</pre>
                     <p class="fragment">"Thanks, len(), you're the best."</p>
                 </section>
+
+
+
+
+
+
+                <section>
+                     <p>"Hey, len(), could you please measure this string for me?"</p>
+                     <pre style="left:30%;"><span class="ipython-in">4</span>len(this_string)
+10</pre>
+                    <p >"Thanks, len(), you're the best."</p>
+
+                </section>
+
+
+
+
+
+
                 <section>
                     <p>The bit in the parentheses is the "argument".</p> 
-                    <pre style="text-align:center;">>>> len(<span class="fragment highlight-red">this_string</span>)</pre>
+                    <pre style="text-align:center;"><span class="ipython-in">5</span>len(<span class="fragment highlight-red">this_string</span>)</pre>
                 </section>
+
+
+
+
+
 
                 <section>
                     <p>The fun part:</p>
                     <p>You can make (<em>define</em>) your own functions!</p> 
                 </section>
+
+
+
+
+
+
+
+
+
                 <section>
                     <p>Why would you want to define your own function?</p>
                     <blockquote class="fragment">"Function: A block of organized, <span class="fragment highlight-red">reusable</span> code that is used to perform a single, related action."</blockquote>
                 </section>
+
+
+
+
+
+
+
                 <section>
                     <p>A function is a verb, so</p>
-                    <p class="fragment">"Computer, when I say, 'Give me the length of this word and transform it a bit,' what I mean is 
+                    <p class="fragment">"Computer, when I say, 'Transform and measure a word,' what I mean is 
                         <ol>
                             <li class="fragment">replace every 'a' or 'A' with an 'x',</li>
                             <li class="fragment">use it in a sentence,</li>
@@ -95,6 +160,15 @@
                         </ol>
                     </p > 
                 </section>
+
+
+
+
+
+
+
+
+
 				<section>
                     <pre><span style="color:red;"># word_stuff.py</span></pre>
                     <pre class="fragment">a_word = "Australia"<span style="color:red;"> # create the word </span></pre>
@@ -115,18 +189,43 @@ The only thing we have to fear is Australia itself.
 </pre>
                     <p class="fragment">Do you want to have to type/paste this code in every time you need it?</p>
 				</section>
+
+
+
+
+
                 <section data-background="http://i.giphy.com/XMl7bkguaL4PK.gif">
                 </section>
+
+
+
+
+
+
                 <section>
                     <p>Would it be useful if you could perform this on <em>any</em> word?</p>
                 </section>
+
+
+
+
+
+
+
                 <section data-background="http://i.giphy.com/Pjr9bh5OUkgTe.gif">
                 
                 </section>
+
+
+
+
+
+
+
                 <section>
 
-                    <p>What if this</p>
-                    <pre>
+                    <p>What if</p>
+                    <pre class="fragment">
 a_word = "Australia"
 print a_word.lower().replace('a','x')
 print "The only thing we have to fear is " + a_word + " itself."
@@ -139,6 +238,12 @@ transform_and_measure_a_word("Australia")
                     </pre>
                     <p class="fragment">?</p>
 				</section>
+
+
+
+
+
+
 				<section data-background="http://i.giphy.com/10XT6xMLS4eofK.gif">
 					<h1 style="color:red; ">Anatomy of a Function</h1>
 </section>
@@ -155,25 +260,63 @@ transform_and_measure_a_word("Australia")
     print a_word + " is " + str(word_length) + " letters long."
 </pre>
 				</section>
+
+
+
+
+
+
                 <section>
-                    <p>Now you can call transform_and_measure_a_word() on any word!:</p>
-                    <pre class="fragment"><span class="ipython-in">1</span>transform_and_measure_a_word("Superman") </pre>
-                    <pre class="fragment">transform_and_measure_a_word("Superman") </pre>
-                    <pre class="fragment">transform_and_measure_a_word("Superman") </pre>
+                <p>Now you can call transform_and_measure_a_word() on any word!:</p>
+                    <pre class="fragment">$ ipython -i word_stuff.py</pre>
+                    <pre class="fragment current-visible"><span class="ipython-in">1</span></pre>
+                    <pre class="fragment"><span class="ipython-in">1</span>transform_and_measure_a_word("Australia")</pre>
+                    <pre class="fragment">xustrxlix
+The only thing we have to fear is Australia itself.
+'Australia' is nine letters long.
+</pre>
+                    <pre class="fragment current-visible"><span class="ipython-in">2</span></pre>
+                    <pre class="fragment "><span class="ipython-in">2</span>transform_and_measure_a_word("Superman") </pre>
+                    <pre class="fragment">Supermxn
+The only thing we have to fear is Superman itself.
+'Superman' is 8 letters long.
+</pre>
+                </section>
+
+
+
+
+
+                <section>
+                    <p>You can also use it in your code as many times as you like!</p>
+                    <pre class="fragment" style="color:red;"># your_code.py</pre>
+                    <pre class="fragment">user_word = raw_input("What word would you like to transform? ")</pre>
+                    <pre class="fragment"><span class="fragment highlight-blue">transform_and_measure_a_word</span>(user_word)</pre>
+                    <pre class="fragment">another_word = "Lake Champlain"</pre>
+                    <pre class="fragment"><span class="fragment highlight-blue">transform_and_measure_a_word</span>(another_word)</pre>
+                    <pre>
+
+</pre>
+                    <pre class="fragment">$ ipython your_code.py</pre>
+                    <pre class="fragment">What word would you like to transform? <span class="fragment">Amazing</span></pre>
+                    <pre class="fragment">xmxzing
+The only thing we have to fear is Amazing itself.
+'amazing' is 8 letters long.
+lxke chxmplxin
+The only thing we have to fear is Lake Champlain itself.
+'Lake Champlain' is 14 letters long.
+</pre>
+
                 </section>
 
                 <section>
-                
-                    <p >By the way, functions don't have to have arguments.</p>                    
-                    <p class="fragment">In this case, we've created an "anonymous" function (no argument).</p>
-                    <h2 class="fragment">()</h2>
-                </section>
-                <section>
-                    <pre >>>> word_list = []</pre>
-                    <pre class="fragment">>>> measure_and_append_word()</pre>
-                    <pre class="fragment">
-Enter a word for me to measure. <span class="fragment">Python</span></pre>
-<pre class="fragment">Python is six letters long.</pre>
+                    <p>Let's try creating another function, one to calculate sales tax.</p>        
+                    <pre class="fragment" style="color:red;"># The tax rate in Burlington is 7%</pre>
+                    <pre class="fragment current-visible">def calculate_sales_tax():</pre>
+                    <pre class="fragment current-visible">def calculate_sales_tax(price):</pre>
+                    <pre class="fragment">def calculate_sales_tax(price, tax_rate):</pre>
+                    <pre class="fragment">    total_tax = price * tax_rate</pre>
+                    <pre class="fragment">    return total_tax</pre>
                 </section>
 			</div>
 
