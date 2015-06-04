@@ -71,7 +71,10 @@
 10</code></pre>
                     <p class="fragment">"Thanks, len(), you're the best."</p>
                 </section>
-
+                <section>
+                    <p>The bit in the parentheses is the "parameter".</p> 
+                    <pre class="">>>> len(<span class="fragment grow">this_string</span>)</pre>
+                </section>
                 <section>
 					<h2>Block of organized code.</h2>
                     <pre class="fragment current-visible"><code data_trim contenteditable>
@@ -145,10 +148,7 @@ measure_and_append_word()
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
-                        [].forEach.call( document.querySelectorAll( '.highlight, pre code' ), function(v, i) { hljs.highlightBlock(v); 
-                        });
-                    } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
