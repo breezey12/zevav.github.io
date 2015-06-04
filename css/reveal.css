@@ -94,8 +94,7 @@ body {
     text-decoration: line-through; }
 
 .reveal .slides section .fragment.current-visible {
-  margin-top: !important 0;
-  margin-bottom: !important 0;
+  visibility: none;
   height: 0; }
   .reveal .slides section .fragment.current-visible.current-fragment {
     height: auto;}

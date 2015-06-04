@@ -42,17 +42,55 @@
 			<div class="slides">
 				<section>
 					<h1>Functions</h1>
-					<h3 class="fragment">Programming-speak for "verb"<h3>
+					<h3 class="fragment">Programming-speak for "verbs"<h3>
 				</section>
 
-				<section>
-                    <blockquote>"A block of organized, reusable code that is used to perform a single, related action."</blockquote>
-				</section>
+                <section> 
+                    <h2> 
+                      Some verbs we've already met:
+                    </h2>
+                    <pre class="fragment"><code data_trim contenteditable>>>> int() # converts non-integers to integers</code></pre>
+                    <pre class="fragment"><code data_trim contenteditable>>>> str() # converts non-strings to strings</code></pre>
+                    <pre class="fragment"><code data_trim contenteditable>>>> len() # measures the length of a string, list, or dictionary</code></pre>
+                    <p class="fragment">These are "built-in" functions, as they come with Python.</p>
+                </section>
 
-				<section>
+                <section>
+                    
+                    <p >Functions<em> do</em> things;</p>
+                    <p class="fragment">Variables (integers, strings, lists) <em>are </em>things.</p>
+                </section>
+
+                <section>
+                    <p>When you "run" a function,</p>
+                    <p class="fragment">you <em>call</em> it.</p>
+                </section>
+                <section>
+                    <p>"Hey, len(), could you please measure this string for me?"</p>
+                    <pre class="fragment"><code data_trim contenteditable>>>> len(this_string)
+10</code></pre>
+                    <p class="fragment">"Thanks, len(), you're the best."</p>
+                </section>
+
+                <section>
+					<h2>Block of organized code.</h2>
+                    <pre class="fragment current-visible"><code data_trim contenteditable>
+# gives the length of a word and adds it to a list
+word_list = []
+word_from_user = raw_input("Enter a word for me to measure")
+word_length = len(word_from_user)
+word_list.append(word_from_user)
+print word_from_user + " is " + str(word_length) + " letters long."
+                    </code></pre>
+                </section>
+
+                <section>
 					<h2>Reusable</h2>
-                    <pre class="fragment"><code data-trim contenteditable> 
-# gives the length of a user-inputted word and adds it to a list
+                </section>
+
+				<section>
+                    <p>this</p>
+                    <pre><code data-trim contenteditable> 
 word_list = []
 word_from_user = raw_input("Enter a word for me to measure")
 word_length = len(word_from_user)
@@ -78,6 +116,11 @@ measure_and_append_word()
     print word_from_user + " is " + str(word_length) + " letters long."
 </code></pre>
 				</section>
+
+				<section>
+                    <blockquote>"A block of organized, reusable code that is used to perform a single, related action."</blockquote>
+				</section>
+
 			</div>
 
 		</div>
