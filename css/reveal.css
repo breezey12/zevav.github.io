@@ -41,12 +41,12 @@ body {
  * VIEW FRAGMENTS
  *********************************************/
 .reveal .slides section .fragment {
-  opacity: 0;
   visibility: hidden;
+  height: 0;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease; }
   .reveal .slides section .fragment.visible {
-    opacity: 1;
+    height: auto;
     visibility: visible; }
 
 .reveal .slides section .fragment.grow {
@@ -94,9 +94,10 @@ body {
     text-decoration: line-through; }
 
 .reveal .slides section .fragment.current-visible {
-  visibility: none;
+  visibility: hidden;
   height: 0; }
   .reveal .slides section .fragment.current-visible.current-fragment {
+    visibility: visible;
     height: auto;}
 
 .reveal .slides section .fragment.highlight-red, .reveal .slides section .fragment.highlight-current-red, .reveal .slides section .fragment.highlight-green, .reveal .slides section .fragment.highlight-current-green, .reveal .slides section .fragment.highlight-blue, .reveal .slides section .fragment.highlight-current-blue {
