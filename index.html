@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Python Operators</title>
+		<title>Functions</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -41,296 +41,43 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Operators</h1>
-					<h3 class="fragment">Characters that represent an action<h3>
-						<aside class="notes">
-							Mini functions that manipulate data in your program.
-						</aside>
+					<h1>Functions</h1>
+					<h3 class="fragment">Programming-speak for "verb"<h3>
 				</section>
 
 				<section>
-					<h2>Operator Categories</h2>
-                    <ul class="fragment">
-                        <li>Arithmetic</li>
-                        <li>String/Object</li>
-                        <li>Assignment</li>
-                        <li>Comparison, Boolean, etc.</li>
-                    </ul>
+                    <blockquote>"A block of organized, reusable code that is used to perform a single, related action."</blockquote>
 				</section>
 
-				<!-- Example of nested vertical slides -->
 				<section>
-				  <section>
-						<h2>Arithmetic Operators</h2>
-					<table>
-						<thead>
-							<tr class="fragment">
-								<th>Operator</th>
-								<th>Description</th>
-								<th>Example of Usage</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="fragment">
-								<td>+</td>
-								<td>Addition</td>
-								<td><pre><code class="python" data-trim contenteditable>1 + 1</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>-</td>
-								<td>Subtraction</td>
-								<td><pre><code class="python" data-trim contenteditable>1 - 1</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>*</td>
-								<td>Multiplication</td>
-								<td><pre><code class="python" data-trim contenteditable>3 * 2</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>/</td>
-								<td>Division</td>
-								<td><pre><code class="python" data-trim contenteditable>6 / 3</code></pre></td>
-							<tr>
-						</tbody>
-					</table>
-						<aside class="notes">
-							These look a lot like what you'd find on a simple calculator, and you can use them as such.
-						</aside>
-					</section>
-				<section>
-						<h2>Arithmetic Operators Continued</h2>
-					<table>
-						<thead>
-							<tr class="fragment">
-								<th>Operator</th>
-								<th>Description</th>
-								<th>Usage</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="fragment">
-								<td>**</td>
-								<td>Exponentiation</td>
-								<td><pre><code class="python" data-trim contenteditable>3 ** 3</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>%</td>
-								<td>Mod</td>
-								<td><pre><code class="python" data-trim contenteditable>4 % 3</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>//</td>
-								<td>Floor Division*</td>
-								<td><pre><code class="python" data-trim contenteditable>4 // 3</code></pre></td>
-							<tr>
-						</tbody>
-					</table>
-						<aside class="notes">
-							Exponentiation- straightforward. Mod is "what's the remainder when we divide 4 by 3?". Floor division is "How many times does 3 go into 4, excluding a remainder?"
-						</aside>
-					</section>
+					<h2>Reusable</h2>
+                    <pre class="fragment"><code data-trim contenteditable> 
+# gives the length of a user-inputted word and adds it to a list
+word_list = []
+word_from_user = raw_input("Enter a word for me to measure")
+word_length = len(word_from_user)
+word_list.append(word_from_user)
+print word_from_user + " is " + str(word_length) + " letters long."
+                    </code></pre>
+					<p class="fragment">becomes</p>
+                    <pre class="fragment"><code data-trim contenteditable> 
+word_list = []
+measure_and_append_word()
+                    </code></pre>
 				</section>
 				<section>
-						<h2>String/Object Operators</h2>
-					<table>
-						<thead>
-							<tr class="fragment">
-								<th>Operator</th>
-								<th>Description</th>
-								<th>Example Usage</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="fragment">
-								<td>+</td>
-								<td>Concatenation</td>
-								<td><pre><code class="python" data-trim contenteditable>'C' + 'U'</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>[]</td>
-								<td>Index</td>
-								<td><pre><code class="python" data-trim contenteditable>a_string[n]</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>[:]</td>
-								<td>Slice</td>
-								<td><pre><code class="python" data-trim contenteditable>a_string[3:7]</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>.</td>
-								<td>Attribute</td>
-								<td><pre><code class="python" data-trim contenteditable>a_list.append(5)</code></pre></td>
-							<tr>
-						</tbody>
-					</table>
-						<aside class="notes">
-                          Concatenation is like addition, but for text(strings)- it combines the two pieces into one, in an intuitive way. Index operator returns the nth element of a string or list. Slice returns a slice of the string or list. Slices include the first index given and up to but excluding the second index given. The attribute operator gives us a way to access functions and variables that are specific to certain types of variables. 
-						</aside>
-					</section>
-				<section>
-				  <section>
-						<h2>Assignment Operators</h2>
-					<table>
-						<thead>
-							<tr class="fragment">
-								<th>Operator</th>
-								<th>Description</th>
-								<th>Example of Usage</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="fragment">
-								<td>=</td>
-								<td>Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number = 42</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>+=</td>
-								<td>Add-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number += 27</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>-=</td>
-								<td>Subtract-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number -= 27</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>*=</td>
-								<td>Multiply-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number *= 2</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>/=</td>
-								<td>Divide-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number /= 2</code></pre></td>
-							<tr>
-						</tbody>
-					</table>
-						<aside class="notes">
-                          Assignment operators assign variables to values. Some combine arithmetic operators with their assignment as a sort of "short hand".
-						</aside>
-				  </section>
-				  <section>
-						<h2>Assignment Operators</h2>
-					<table>
-						<thead>
-							<tr class="fragment">
-								<th>Operator</th>
-								<th>Description</th>
-								<th>Example of Usage</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="fragment">
-								<td>**=</td>
-								<td>Exponentiate-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number **= 2</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>/=</td>
-								<td>Divide-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number /= 2</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>%=</td>
-								<td>Mod-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number %= 2</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>//=</td>
-								<td>Floor-Divide-Assign</td>
-								<td><pre><code class="python" data-trim contenteditable>number //= 2</code></pre></td>
-							<tr>
-						</tbody>
-						<aside class="notes">
-                          These exist for all of the arithmetic operators.
-						</aside>
-					</table>
-					</section>
-				  </section>
-				<section>
-				  <section>
-						<h2>Comparison, Boolean & Membership Operators</h2>
-					<table>
-						<thead>
-							<tr class="fragment">
-								<th>Operator</th>
-								<th>Description&nbsp;of&nbsp;Operator</th>
-								<th>Example of Usage</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="fragment">
-								<td>==</td>
-								<td>Equality Comparison</td>
-								<td><pre><code class="python" data-trim contenteditable>1 == 2</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>!=</td>
-								<td>Not Equal</td>
-								<td><pre><code class="python" data-trim contenteditable>1 != 2</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>&lt; <br> &gt;</td>
-								<td>Less Than<br>Greater Than</td>
-								<td><pre><code class="python" data-trim contenteditable>1 &lt; 2
-2 &gt; 1</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>&lt;=<br> &gt;=</td>
-								<td>Less Equals<br>Greater Equals</td>
-								<td><pre><code class="python" data-trim contenteditable>1 &lt;= 2
-2 &gt;= 1</code></pre></td>
-							<tr>
-						</tbody>
-					</table>
-					<aside class="notes">
-                          Comparisons return a Boolean, 'True' or 'False' depending on if the comparison is valid.
-					</aside>
-				  </section>
-				  <section>
-					<h2>Comparison, Boolean & Membership Operators</h2>
-					<table>
-						<thead>
-							<tr class="fragment">
-								<th>Operator</th>
-								<th>Description&nbsp;of&nbsp;Operator</th>
-								<th>Example of Usage</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="fragment">
-								<td>is</td>
-								<td>Identity Comparison</td>
-								<td><pre><code class="python" data-trim contenteditable>[] is []</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>not</td>
-								<td>Not (negation)</td>
-								<td><pre><code class="python" data-trim contenteditable>not False</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>and</td>
-								<td>Logical And</td>
-								<td><pre><code class="python" data-trim contenteditable>(1==1) and (2==2)</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>or</td>
-								<td>Logical Or</td>
-								<td><pre><code class="python" data-trim contenteditable>(1==1) or (5==2)</code></pre></td>
-							<tr>
-							<tr class="fragment">
-								<td>in</td>
-								<td>Membership</td>
-								<td><pre><code class="python" data-trim contenteditable>"o" in "one"</code></pre></td>
-							<tr>
-						</tbody>
-					</table>
-					<aside class="notes">
-                      "is" is sort of like "==", but it checks if two things are the same thing, not just equal to each other. "not" negates a statement, and checks if two statements both evaluate to "True", and "or" returns "True" if either statement evaluates to "True"
-					</aside>
+					<h2>Anatomy of a Function</h2>
+                    <pre class="fragment current-visible"><code  data-trim contenteditable>def</code></pre>
+                    <pre class="fragment current-visible"><code  data-trim contenteditable>def # says "I'm defining a function"</code></pre>
+                    <pre class="fragment current-visible"><code  data-trim contenteditable>def measure_and_append_word() # the name of the function + "()"</code></pre>
+                    <pre class="fragment current-visible"><code  data-trim contenteditable>def measure_and_append_word():</code></pre>
+                    <pre class="fragment current-visible"><code  data-trim contenteditable>def measure_and_append_word():
+    word_from_user = raw_input("Enter a word for me to measure")
+    word_length = len(word_from_user)
+    word_list.append(word_from_user)
+    print word_from_user + " is " + str(word_length) + " letters long."
+</code></pre>
 				</section>
-			  </section>
 			</div>
 
 		</div>
@@ -355,7 +102,10 @@
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+                        [].forEach.call( document.querySelectorAll( '.highlight, pre code' ), function(v, i) { hljs.highlightBlock(v); 
+                        });
+                    } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]

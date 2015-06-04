@@ -16,6 +16,10 @@ html, body, .reveal div, .reveal span, .reveal applet, .reveal object, .reveal i
   font: inherit;
   vertical-align: baseline; }
 
+.reveal code {
+  font-size: 18px;
+}
+
 .reveal article, .reveal aside, .reveal details, .reveal figcaption, .reveal figure, .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal section {
   display: block; }
 
@@ -90,11 +94,11 @@ body {
     text-decoration: line-through; }
 
 .reveal .slides section .fragment.current-visible {
-  opacity: 0;
-  visibility: hidden; }
+  margin-top: !important 0;
+  margin-bottom: !important 0;
+  height: 0; }
   .reveal .slides section .fragment.current-visible.current-fragment {
-    opacity: 1;
-    visibility: visible; }
+    height: auto;}
 
 .reveal .slides section .fragment.highlight-red, .reveal .slides section .fragment.highlight-current-red, .reveal .slides section .fragment.highlight-green, .reveal .slides section .fragment.highlight-current-green, .reveal .slides section .fragment.highlight-blue, .reveal .slides section .fragment.highlight-current-blue {
   opacity: 1;
